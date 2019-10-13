@@ -1,0 +1,144 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\intelFPGA_lite\18.1\TicTacToe\simulation\modelsim
+vclock_divider
+Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+Ill7cSJ2kO=_PdVEeE93Rz2
+V@=1J>B71A9A@hWh0BlEP<3
+S1
+Z2 dC:\intelFPGA_lite\18.1\TicTacToe\simulation\modelsim
+w1570927963
+8C:/intelFPGA_lite/18.1/TicTacToe/clock_divider.sv
+FC:/intelFPGA_lite/18.1/TicTacToe/clock_divider.sv
+L0 3
+Z3 OV;L;10.1b;51
+r1
+31
+Z4 o-sv -work work -O0
+Z5 !s92 -sv -work work +incdir+C:/intelFPGA_lite/18.1/TicTacToe -O0
+!i10b 1
+!s100 ;alk44oQ`D:Y1oi@H89L@3
+!s105 clock_divider_sv_unit
+!s85 0
+!s108 1570931023.933000
+!s107 C:/intelFPGA_lite/18.1/TicTacToe/clock_divider.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/intelFPGA_lite/18.1/TicTacToe|C:/intelFPGA_lite/18.1/TicTacToe/clock_divider.sv|
+!s101 -O0
+vhorizontal_counter
+R1
+InB]IC][SOHNR8m6]_?IQo3
+Vjz@`3co8IgB7k?^o0bI:S2
+S1
+R2
+w1570926203
+8C:/intelFPGA_lite/18.1/TicTacToe/horizontal_counter.sv
+FC:/intelFPGA_lite/18.1/TicTacToe/horizontal_counter.sv
+L0 3
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 DS5C=74i7BLb2Ad^RUN@W2
+!s105 horizontal_counter_sv_unit
+!s85 0
+!s108 1570931024.285000
+!s107 C:/intelFPGA_lite/18.1/TicTacToe/horizontal_counter.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/intelFPGA_lite/18.1/TicTacToe|C:/intelFPGA_lite/18.1/TicTacToe/horizontal_counter.sv|
+!s101 -O0
+vtestbench_Top
+R1
+!i10b 1
+!s100 JQel<H6DmdL>lk0J54[oO3
+ITiZENia0a?^D9ziEe8OTP2
+V:?=8Sk@8C:67X_^4;cGAQ2
+!s105 testbench_Top_sv_unit
+S1
+R2
+w1570925902
+8C:/intelFPGA_lite/18.1/TicTacToe/testbench_Top.sv
+FC:/intelFPGA_lite/18.1/TicTacToe/testbench_Top.sv
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1570931062.361000
+!s107 C:/intelFPGA_lite/18.1/TicTacToe/testbench_Top.sv|
+!s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/18.1/TicTacToe/testbench_Top.sv|
+!s101 -O0
+o-work work -O0
+ntestbench_@top
+vTicTacToe
+R1
+IhMU=R@3CaNQ_IUhe8gX9@0
+V;hb[f3A@kM?R`:3W?L`8?3
+S1
+R2
+w1570929941
+8C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv
+FC:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv
+L0 16
+R3
+r1
+31
+R4
+R5
+n@tic@tac@toe
+!i10b 1
+!s100 f>gQCWDM1z:G8>WPk4fK51
+!s105 TicTacToe_sv_unit
+!s85 0
+!s108 1570931024.103000
+!s107 C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/intelFPGA_lite/18.1/TicTacToe|C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv|
+!s101 -O0
+vtop
+R1
+IHPzaWBgWE_Jo5V2eQilHh3
+Vn?=JHk4O`8nzV5FEXoL4]3
+S1
+R2
+w1570929809
+8C:/intelFPGA_lite/18.1/TicTacToe/top.sv
+FC:/intelFPGA_lite/18.1/TicTacToe/top.sv
+L0 2
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 hQzN>^<zTK3?=fM@YCnKA2
+!s105 top_sv_unit
+!s85 0
+!s108 1570931024.686000
+!s107 C:/intelFPGA_lite/18.1/TicTacToe/top.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/intelFPGA_lite/18.1/TicTacToe|C:/intelFPGA_lite/18.1/TicTacToe/top.sv|
+!s101 -O0
+vvertical_counter
+R1
+I?PWL2RgDhOLZEBSZS8D7<3
+VCc_Voj6;[Y:<QDQEbo1:h3
+S1
+R2
+w1570928445
+8C:/intelFPGA_lite/18.1/TicTacToe/vertical_counter.sv
+FC:/intelFPGA_lite/18.1/TicTacToe/vertical_counter.sv
+L0 3
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 Z[eF@O31mm5BoU]dVkIzb2
+!s105 vertical_counter_sv_unit
+!s85 0
+!s108 1570931024.489000
+!s107 C:/intelFPGA_lite/18.1/TicTacToe/vertical_counter.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/intelFPGA_lite/18.1/TicTacToe|C:/intelFPGA_lite/18.1/TicTacToe/vertical_counter.sv|
+!s101 -O0
