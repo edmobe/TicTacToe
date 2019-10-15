@@ -2,7 +2,7 @@ library verilog;
 use verilog.vl_types.all;
 entity clock_divider is
     generic(
-        div_value       : integer := 1
+        div_value       : integer := 0
     );
     port(
         clk             : in     vl_logic;

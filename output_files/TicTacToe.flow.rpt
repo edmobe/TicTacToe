@@ -1,5 +1,5 @@
 Flow report for TicTacToe
-Sat Oct 12 21:27:19 2019
+Tue Oct 15 17:06:52 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,19 +40,19 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Oct 12 21:27:19 2019       ;
+; Flow Status                     ; Successful - Tue Oct 15 17:06:52 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; TicTacToe                                   ;
 ; Top-level Entity Name           ; TicTacToe                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 50 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 101                                         ;
-; Total pins                      ; 30 / 457 ( 7 % )                            ;
+; Logic utilization (in ALMs)     ; 197 / 32,070 ( < 1 % )                      ;
+; Total registers                 ; 96                                          ;
+; Total pins                      ; 50 / 457 ( 11 % )                           ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
+; Total block memory bits         ; 1,653,120 / 4,065,280 ( 41 % )              ;
+; Total DSP Blocks                ; 1 / 87 ( 1 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/12/2019 21:25:13 ;
+; Start date & time ; 10/15/2019 17:02:18 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; TicTacToe           ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 204722662231713.157093711221004        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 204722662231713.157118053815196        ; --            ; --          ; --         ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
@@ -96,12 +96,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 4848 MB             ; 00:00:40                           ;
-; Fitter               ; 00:01:12     ; 1.0                     ; 6594 MB             ; 00:02:30                           ;
-; Assembler            ; 00:00:12     ; 1.0                     ; 4852 MB             ; 00:00:12                           ;
-; Timing Analyzer      ; 00:00:15     ; 1.1                     ; 5130 MB             ; 00:00:13                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4752 MB             ; 00:00:03                           ;
-; Total                ; 00:02:01     ; --                      ; --                  ; 00:03:38                           ;
+; Analysis & Synthesis ; 00:01:20     ; 1.0                     ; 4877 MB             ; 00:01:33                           ;
+; Fitter               ; 00:02:47     ; 1.1                     ; 6674 MB             ; 00:04:23                           ;
+; Assembler            ; 00:00:09     ; 1.0                     ; 4883 MB             ; 00:00:09                           ;
+; Timing Analyzer      ; 00:00:11     ; 1.9                     ; 5199 MB             ; 00:00:17                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4776 MB             ; 00:00:02                           ;
+; Total                ; 00:04:29     ; --                      ; --                  ; 00:06:24                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

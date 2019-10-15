@@ -1,7 +1,6 @@
-`timescale 1ns / 1ps
 // Counter based
-module clock_divider #(parameter div_value = 1) (
-	input logic clk, // 100 MHz
+module clock_divider #(parameter div_value = 0) (
+	input logic clk, // 50 MHz
 	output logic divided_clk = 0 // 25 MHz
 );
 
@@ -13,18 +12,13 @@ module clock_divider #(parameter div_value = 1) (
 	begin
 		// Keep counting until division
 		if (counter_value == div_value)
+		begin
 			counter_value = 0;
-		else
-			counter_value = counter_value + 1;
-	end
-
-	// Divide clock
-	always @ (posedge clk)
-	begin
-		// Keep counting until division
-		if (counter_value == div_value)
 			divided_clk = ~divided_clk;
+		end
 		else
-			divided_clk = divided_clk;
+		begin
+			counter_value = counter_value + 1;
+		end
 	end
 endmodule

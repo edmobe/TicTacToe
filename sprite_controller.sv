@@ -1,5 +1,5 @@
 module sprite_controller(
-	input logic CLK,
+	input logic clk,
 	input logic[9:0] x,
 	input logic[9:0] y,
 	output logic[7:0] VGA_RED,
@@ -15,9 +15,9 @@ module sprite_controller(
 	assign x_mem = x-150;
 	assign y_mem = y-100;
 	
-	sram #(16, 8, 40320, "C:/intelFPGA_lite/18.1/TicTacToe/Image processing/spriteVamoR.mem") sprite_R(CLK, y_mem*224+x_mem, wren, 0, mem_r);
-	sram #(16, 8, 40320, "C:/intelFPGA_lite/18.1/TicTacToe/Image processing/spriteVamoG.mem") sprite_G(CLK, y_mem*224+x_mem, wren, 0, mem_g);
-	sram #(16, 8, 40320, "C:/intelFPGA_lite/18.1/TicTacToe/Image processing/spriteVamoB.mem") sprite_B(CLK, y_mem*224+x_mem, wren, 0, mem_b);
+	sram #(16, 8, 40320, "C:/intelFPGA_lite/18.1/TicTacToe/Image processing/spriteVamoR.mem") sprite_R(clk, y_mem*224+x_mem, wren, 0, mem_r);
+	sram #(16, 8, 40320, "C:/intelFPGA_lite/18.1/TicTacToe/Image processing/spriteVamoG.mem") sprite_G(clk, y_mem*224+x_mem, wren, 0, mem_g);
+	sram #(16, 8, 40320, "C:/intelFPGA_lite/18.1/TicTacToe/Image processing/spriteVamoB.mem") sprite_B(clk, y_mem*224+x_mem, wren, 0, mem_b);
 	
 	always @*
 	begin

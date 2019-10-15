@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 // Counter based
 module horizontal_counter (
 	input clk_25MHz,

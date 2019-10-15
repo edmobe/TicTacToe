@@ -1,5 +1,7 @@
 module TicTacToe(
-	input clk,
+	input CLOCK_50,
+	input [9:0] SW,
+	output [9:0] LEDR,
 	output VGA_HS,
 	output VGA_VS,
 	output [7:0] VGA_R,
@@ -10,8 +12,10 @@ module TicTacToe(
 	output VGA_BLANK_N
 	);
 	
-	top UUT (clk, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B, VGA_CLK, VGA_SYNC_N, VGA_BLANK_N);
-
+	logic [1:0] game_logic;
+	
+	video_controller VGA (CLOCK_50, SW[1:0], VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B, VGA_CLK, VGA_SYNC_N, VGA_BLANK_N);
+	
 endmodule
 
 

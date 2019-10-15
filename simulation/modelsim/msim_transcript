@@ -10,6 +10,12 @@
 # ** Warning: Copied C:\intelFPGA_lite\18.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
+# vlog -sv -work work +incdir+C:/intelFPGA_lite/18.1/TicTacToe {C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv}
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module video_controller
+# 
+# Top level modules:
+# 	video_controller
 # vlog -sv -work work +incdir+C:/intelFPGA_lite/18.1/TicTacToe {C:/intelFPGA_lite/18.1/TicTacToe/clock_divider.sv}
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 # -- Compiling module clock_divider
@@ -34,45 +40,89 @@
 # 
 # Top level modules:
 # 	vertical_counter
-# vlog -sv -work work +incdir+C:/intelFPGA_lite/18.1/TicTacToe {C:/intelFPGA_lite/18.1/TicTacToe/top.sv}
+# 
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/TicTacToe/block.sv
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
-# -- Compiling module top
+# -- Compiling module block
 # 
 # Top level modules:
-# 	top
-# 
-vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/TicTacToe/testbench_Top.sv
+# 	block
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/TicTacToe/clock_divider.sv
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
-# -- Compiling module testbench_Top
+# -- Compiling module clock_divider
 # 
 # Top level modules:
-# 	testbench_Top
-vsim work.testbench_Top
-# vsim work.testbench_Top 
+# 	clock_divider
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/TicTacToe/horizontal_counter.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module horizontal_counter
+# 
+# Top level modules:
+# 	horizontal_counter
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/TicTacToe/sprite_controller.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module sprite_controller
+# 
+# Top level modules:
+# 	sprite_controller
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/TicTacToe/sram.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module sram
+# 
+# Top level modules:
+# 	sram
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/TicTacToe/testbench_Sprite_Controller.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module testbench_Sprite_Controller
+# 
+# Top level modules:
+# 	testbench_Sprite_Controller
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/TicTacToe/testbench_Sram.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module testbench_Sram
+# 
+# Top level modules:
+# 	testbench_Sram
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/TicTacToe/testbench_TicTacToe.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module testbench_TicTacToe
+# 
+# Top level modules:
+# 	testbench_TicTacToe
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/TicTacToe/testbench_Video_Controller.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module testbench_Video_Controller
+# 
+# Top level modules:
+# 	testbench_Video_Controller
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module TicTacToe
+# 
+# Top level modules:
+# 	TicTacToe
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/TicTacToe/vertical_counter.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module vertical_counter
+# 
+# Top level modules:
+# 	vertical_counter
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module video_controller
+# 
+# Top level modules:
+# 	video_controller
+vsim work.testbench_Sram
+# vsim work.testbench_Sram 
 # Loading sv_std.std
-# Loading work.testbench_Top
-# Loading work.top
-# Loading work.clock_divider
-# Loading work.horizontal_counter
-# Loading work.vertical_counter
-# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/TicTacToe/testbench_Top.sv(12): [PCDPC] - Port size (8 or 8) does not match connection size (4) for port 'Red'. The port definition is at: C:/intelFPGA_lite/18.1/TicTacToe/top.sv(6).
+# Loading work.testbench_Sram
+# Loading work.sram
+# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/TicTacToe/testbench_Sram.sv(10): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'rw'. The port definition is at: C:/intelFPGA_lite/18.1/TicTacToe/sram.sv(4).
 # 
-#         Region: /testbench_Top/UUT
-# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/TicTacToe/testbench_Top.sv(12): [PCDPC] - Port size (8 or 8) does not match connection size (4) for port 'Green'. The port definition is at: C:/intelFPGA_lite/18.1/TicTacToe/top.sv(7).
-# 
-#         Region: /testbench_Top/UUT
-# ** Warning: (vsim-3015) C:/intelFPGA_lite/18.1/TicTacToe/testbench_Top.sv(12): [PCDPC] - Port size (8 or 8) does not match connection size (4) for port 'Blue'. The port definition is at: C:/intelFPGA_lite/18.1/TicTacToe/top.sv(8).
-# 
-#         Region: /testbench_Top/UUT
-add wave -position end  sim:/testbench_Top/UUT/clk
-add wave -position end  sim:/testbench_Top/UUT/Hsynq
-add wave -position end  sim:/testbench_Top/UUT/Vsynq
-add wave -position end  sim:/testbench_Top/UUT/Red
-add wave -position end  sim:/testbench_Top/UUT/Green
-add wave -position end  sim:/testbench_Top/UUT/Blue
-add wave -position end  sim:/testbench_Top/UUT/clk_25MHz
-add wave -position end  sim:/testbench_Top/UUT/enable_V_Counter
-add wave -position end  sim:/testbench_Top/UUT/h_Count_Value
-add wave -position end  sim:/testbench_Top/UUT/v_Count_Value
-run
+#         Region: /testbench_Sram/sprite_R
+add wave -position end  sim:/testbench_Sram/clk
+add wave -position end  sim:/testbench_Sram/address
+add wave -position end  sim:/testbench_Sram/sram_in
+add wave -position end  sim:/testbench_Sram/sram_out
 run
