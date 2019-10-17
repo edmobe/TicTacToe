@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TicTacToe
-Tue Oct 15 17:03:38 2019
+Thu Oct 17 02:44:25 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -45,9 +45,10 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  37. Port Connectivity Checks: "video_controller:VGA|sram:vamo_b"
  38. Port Connectivity Checks: "video_controller:VGA|sram:vamo_g"
  39. Port Connectivity Checks: "video_controller:VGA|sram:vamo_r"
- 40. Post-Synthesis Netlist Statistics for Top Partition
- 41. Elapsed Time Per Partition
- 42. Analysis & Synthesis Messages
+ 40. Port Connectivity Checks: "video_controller:VGA"
+ 41. Post-Synthesis Netlist Statistics for Top Partition
+ 42. Elapsed Time Per Partition
+ 43. Analysis & Synthesis Messages
 
 
 
@@ -73,7 +74,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Oct 15 17:03:38 2019       ;
+; Analysis & Synthesis Status     ; Successful - Thu Oct 17 02:44:25 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; TicTacToe                                   ;
 ; Top-level Entity Name           ; TicTacToe                                   ;
@@ -83,7 +84,7 @@ refer to the applicable agreement for further details.
 ; Total pins                      ; 50                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 1,653,120                                   ;
-; Total DSP Blocks                ; 1                                           ;
+; Total DSP Blocks                ; 9                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
@@ -241,14 +242,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 198            ;
+; Estimate of Logic utilization (ALMs needed) ; 331            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 306            ;
-;     -- 7 input functions                    ; 9              ;
-;     -- 6 input functions                    ; 79             ;
-;     -- 5 input functions                    ; 22             ;
-;     -- 4 input functions                    ; 47             ;
-;     -- <=3 input functions                  ; 149            ;
+; Combinational ALUT usage for logic          ; 512            ;
+;     -- 7 input functions                    ; 1              ;
+;     -- 6 input functions                    ; 147            ;
+;     -- 5 input functions                    ; 51             ;
+;     -- 4 input functions                    ; 48             ;
+;     -- <=3 input functions                  ; 265            ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 84             ;
 ;                                             ;                ;
@@ -256,12 +257,12 @@ refer to the applicable agreement for further details.
 ; Total MLAB memory bits                      ; 0              ;
 ; Total block memory bits                     ; 1653120        ;
 ;                                             ;                ;
-; Total DSP Blocks                            ; 1              ;
+; Total DSP Blocks                            ; 9              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 256            ;
-; Total fan-out                               ; 4595           ;
-; Average fan-out                             ; 6.60           ;
+; Total fan-out                               ; 5470           ;
+; Average fan-out                             ; 6.01           ;
 +---------------------------------------------+----------------+
 
 
@@ -270,30 +271,30 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                             ; Entity Name        ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; |TicTacToe                                   ; 306 (0)             ; 84 (0)                    ; 1653120           ; 1          ; 50   ; 0            ; |TicTacToe                                                                                                                      ; TicTacToe          ; work         ;
-;    |video_controller:VGA|                    ; 306 (167)           ; 84 (0)                    ; 1653120           ; 1          ; 0    ; 0            ; |TicTacToe|video_controller:VGA                                                                                                 ; video_controller   ; work         ;
+; |TicTacToe                                   ; 512 (0)             ; 84 (0)                    ; 1653120           ; 9          ; 50   ; 0            ; |TicTacToe                                                                                                                      ; TicTacToe          ; work         ;
+;    |video_controller:VGA|                    ; 512 (388)           ; 84 (0)                    ; 1653120           ; 9          ; 0    ; 0            ; |TicTacToe|video_controller:VGA                                                                                                 ; video_controller   ; work         ;
 ;       |clock_divider:vga_clock_gen|          ; 40 (40)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|clock_divider:vga_clock_gen                                                                     ; clock_divider      ; work         ;
 ;       |horizontal_counter:vga_horizontal|    ; 20 (20)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|horizontal_counter:vga_horizontal                                                               ; horizontal_counter ; work         ;
-;       |sram:pika_b|                          ; 2 (0)               ; 3 (0)                     ; 40320             ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_b                                                                                     ; sram               ; work         ;
-;          |altsyncram:memory_array_rtl_0|     ; 2 (0)               ; 3 (0)                     ; 40320             ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_b|altsyncram:memory_array_rtl_0                                                       ; altsyncram         ; work         ;
-;             |altsyncram_l7d1:auto_generated| ; 2 (0)               ; 3 (3)                     ; 40320             ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_b|altsyncram:memory_array_rtl_0|altsyncram_l7d1:auto_generated                        ; altsyncram_l7d1    ; work         ;
-;                |mux_qfb:mux2|                ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_b|altsyncram:memory_array_rtl_0|altsyncram_l7d1:auto_generated|mux_qfb:mux2           ; mux_qfb            ; work         ;
-;       |sram:pika_g|                          ; 17 (0)              ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_g                                                                                     ; sram               ; work         ;
-;          |altsyncram:memory_array_rtl_0|     ; 17 (0)              ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_g|altsyncram:memory_array_rtl_0                                                       ; altsyncram         ; work         ;
-;             |altsyncram_f7d1:auto_generated| ; 17 (0)              ; 3 (3)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_g|altsyncram:memory_array_rtl_0|altsyncram_f7d1:auto_generated                        ; altsyncram_f7d1    ; work         ;
-;                |mux_qfb:mux2|                ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_g|altsyncram:memory_array_rtl_0|altsyncram_f7d1:auto_generated|mux_qfb:mux2           ; mux_qfb            ; work         ;
+;       |sram:pika_b|                          ; 1 (0)               ; 3 (0)                     ; 40320             ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_b                                                                                     ; sram               ; work         ;
+;          |altsyncram:memory_array_rtl_0|     ; 1 (0)               ; 3 (0)                     ; 40320             ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_b|altsyncram:memory_array_rtl_0                                                       ; altsyncram         ; work         ;
+;             |altsyncram_l7d1:auto_generated| ; 1 (0)               ; 3 (3)                     ; 40320             ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_b|altsyncram:memory_array_rtl_0|altsyncram_l7d1:auto_generated                        ; altsyncram_l7d1    ; work         ;
+;                |mux_qfb:mux2|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_b|altsyncram:memory_array_rtl_0|altsyncram_l7d1:auto_generated|mux_qfb:mux2           ; mux_qfb            ; work         ;
+;       |sram:pika_g|                          ; 8 (0)               ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_g                                                                                     ; sram               ; work         ;
+;          |altsyncram:memory_array_rtl_0|     ; 8 (0)               ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_g|altsyncram:memory_array_rtl_0                                                       ; altsyncram         ; work         ;
+;             |altsyncram_f7d1:auto_generated| ; 8 (0)               ; 3 (3)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_g|altsyncram:memory_array_rtl_0|altsyncram_f7d1:auto_generated                        ; altsyncram_f7d1    ; work         ;
+;                |mux_qfb:mux2|                ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_g|altsyncram:memory_array_rtl_0|altsyncram_f7d1:auto_generated|mux_qfb:mux2           ; mux_qfb            ; work         ;
 ;       |sram:pika_r|                          ; 8 (0)               ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_r                                                                                     ; sram               ; work         ;
 ;          |altsyncram:memory_array_rtl_0|     ; 8 (0)               ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_r|altsyncram:memory_array_rtl_0                                                       ; altsyncram         ; work         ;
 ;             |altsyncram_m4d1:auto_generated| ; 8 (0)               ; 3 (3)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_r|altsyncram:memory_array_rtl_0|altsyncram_m4d1:auto_generated                        ; altsyncram_m4d1    ; work         ;
 ;                |mux_qfb:mux2|                ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:pika_r|altsyncram:memory_array_rtl_0|altsyncram_m4d1:auto_generated|mux_qfb:mux2           ; mux_qfb            ; work         ;
-;       |sram:vamo_b|                          ; 4 (0)               ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_b                                                                                     ; sram               ; work         ;
-;          |altsyncram:memory_array_rtl_0|     ; 4 (0)               ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_b|altsyncram:memory_array_rtl_0                                                       ; altsyncram         ; work         ;
-;             |altsyncram_83d1:auto_generated| ; 4 (0)               ; 3 (3)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_b|altsyncram:memory_array_rtl_0|altsyncram_83d1:auto_generated                        ; altsyncram_83d1    ; work         ;
-;                |mux_qfb:mux2|                ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_b|altsyncram:memory_array_rtl_0|altsyncram_83d1:auto_generated|mux_qfb:mux2           ; mux_qfb            ; work         ;
-;       |sram:vamo_g|                          ; 17 (0)              ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_g                                                                                     ; sram               ; work         ;
-;          |altsyncram:memory_array_rtl_0|     ; 17 (0)              ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_g|altsyncram:memory_array_rtl_0                                                       ; altsyncram         ; work         ;
-;             |altsyncram_59d1:auto_generated| ; 17 (0)              ; 3 (3)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_g|altsyncram:memory_array_rtl_0|altsyncram_59d1:auto_generated                        ; altsyncram_59d1    ; work         ;
-;                |mux_qfb:mux2|                ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_g|altsyncram:memory_array_rtl_0|altsyncram_59d1:auto_generated|mux_qfb:mux2           ; mux_qfb            ; work         ;
+;       |sram:vamo_b|                          ; 8 (0)               ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_b                                                                                     ; sram               ; work         ;
+;          |altsyncram:memory_array_rtl_0|     ; 8 (0)               ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_b|altsyncram:memory_array_rtl_0                                                       ; altsyncram         ; work         ;
+;             |altsyncram_83d1:auto_generated| ; 8 (0)               ; 3 (3)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_b|altsyncram:memory_array_rtl_0|altsyncram_83d1:auto_generated                        ; altsyncram_83d1    ; work         ;
+;                |mux_qfb:mux2|                ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_b|altsyncram:memory_array_rtl_0|altsyncram_83d1:auto_generated|mux_qfb:mux2           ; mux_qfb            ; work         ;
+;       |sram:vamo_g|                          ; 8 (0)               ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_g                                                                                     ; sram               ; work         ;
+;          |altsyncram:memory_array_rtl_0|     ; 8 (0)               ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_g|altsyncram:memory_array_rtl_0                                                       ; altsyncram         ; work         ;
+;             |altsyncram_59d1:auto_generated| ; 8 (0)               ; 3 (3)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_g|altsyncram:memory_array_rtl_0|altsyncram_59d1:auto_generated                        ; altsyncram_59d1    ; work         ;
+;                |mux_qfb:mux2|                ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_g|altsyncram:memory_array_rtl_0|altsyncram_59d1:auto_generated|mux_qfb:mux2           ; mux_qfb            ; work         ;
 ;       |sram:vamo_r|                          ; 13 (0)              ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_r                                                                                     ; sram               ; work         ;
 ;          |altsyncram:memory_array_rtl_0|     ; 13 (0)              ; 3 (0)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_r|altsyncram:memory_array_rtl_0                                                       ; altsyncram         ; work         ;
 ;             |altsyncram_k4d1:auto_generated| ; 13 (0)              ; 3 (3)                     ; 322560            ; 0          ; 0    ; 0            ; |TicTacToe|video_controller:VGA|sram:vamo_r|altsyncram:memory_array_rtl_0|altsyncram_k4d1:auto_generated                        ; altsyncram_k4d1    ; work         ;
@@ -323,36 +324,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+-------------+
 ; Statistic                       ; Number Used ;
 +---------------------------------+-------------+
-; Two Independent 18x18           ; 1           ;
-; Total number of DSP blocks      ; 1           ;
+; Two Independent 18x18           ; 9           ;
+; Total number of DSP blocks      ; 9           ;
 ;                                 ;             ;
-; Fixed Point Unsigned Multiplier ; 1           ;
+; Fixed Point Unsigned Multiplier ; 9           ;
 +---------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                            ;
-+-----------------------------------------------------+---------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal             ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------------------+------------------------+
-; video_controller:VGA|address[15]                    ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[13]                    ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[14]                    ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[0]                     ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[1]                     ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[2]                     ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[3]                     ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[4]                     ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[5]                     ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[6]                     ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[7]                     ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[8]                     ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[9]                     ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[10]                    ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[11]                    ; video_controller:VGA|address[1] ; yes                    ;
-; video_controller:VGA|address[12]                    ; video_controller:VGA|address[1] ; yes                    ;
-; Number of user-specified and inferred latches = 16  ;                                 ;                        ;
-+-----------------------------------------------------+---------------------------------+------------------------+
++-----------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                             ;
++-----------------------------------------------------+----------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal              ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------------------+------------------------+
+; video_controller:VGA|address[15]                    ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[14]                    ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[13]                    ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[0]                     ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[1]                     ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[2]                     ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[3]                     ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[4]                     ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[5]                     ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[6]                     ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[7]                     ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[8]                     ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[9]                     ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[10]                    ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[11]                    ; video_controller:VGA|address[15] ; yes                    ;
+; video_controller:VGA|address[12]                    ; video_controller:VGA|address[15] ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                                  ;                        ;
++-----------------------------------------------------+----------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -390,9 +391,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |TicTacToe|video_controller:VGA|blue[6] ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TicTacToe|video_controller:VGA|green   ;
-; 5:1                ; 17 bits   ; 51 LEs        ; 51 LEs               ; 0 LEs                  ; No         ; |TicTacToe|video_controller:VGA|red[1]  ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |TicTacToe|video_controller:VGA|Add1    ;
+; 9:1                ; 15 bits   ; 90 LEs        ; 45 LEs               ; 45 LEs                 ; No         ; |TicTacToe|video_controller:VGA|Add1    ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; No         ; |TicTacToe|video_controller:VGA|blue[7] ;
+; 11:1               ; 9 bits    ; 63 LEs        ; 36 LEs               ; 27 LEs                 ; No         ; |TicTacToe|video_controller:VGA|blue[0] ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |TicTacToe|video_controller:VGA|red[0]  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
 
@@ -1052,6 +1055,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++--------------------------------------------------+
+; Port Connectivity Checks: "video_controller:VGA" ;
++---------------+-------+----------+---------------+
+; Port          ; Type  ; Severity ; Details       ;
++---------------+-------+----------+---------------+
+; block00[1..0] ; Input ; Info     ; Stuck at VCC  ;
+; block00[2]    ; Input ; Info     ; Stuck at GND  ;
+; block01[2..1] ; Input ; Info     ; Stuck at GND  ;
+; block01[0]    ; Input ; Info     ; Stuck at VCC  ;
+; block02[2]    ; Input ; Info     ; Stuck at GND  ;
+; block02[1]    ; Input ; Info     ; Stuck at VCC  ;
+; block02[0]    ; Input ; Info     ; Stuck at GND  ;
+; block10       ; Input ; Info     ; Stuck at GND  ;
+; block11[2]    ; Input ; Info     ; Stuck at GND  ;
+; block11[1]    ; Input ; Info     ; Stuck at VCC  ;
+; block11[0]    ; Input ; Info     ; Stuck at GND  ;
+; block12[2..1] ; Input ; Info     ; Stuck at GND  ;
+; block12[0]    ; Input ; Info     ; Stuck at VCC  ;
+; block20       ; Input ; Info     ; Stuck at GND  ;
+; block21[1..0] ; Input ; Info     ; Stuck at VCC  ;
+; block21[2]    ; Input ; Info     ; Stuck at GND  ;
+; block22       ; Input ; Info     ; Stuck at GND  ;
+; selected      ; Input ; Info     ; Stuck at GND  ;
++---------------+-------+----------+---------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
@@ -1061,28 +1090,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 16                          ;
 ;     SCLR              ; 48                          ;
 ;     plain             ; 20                          ;
-; arriav_lcell_comb     ; 309                         ;
-;     arith             ; 93                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 92                          ;
-;     extend            ; 9                           ;
-;         7 data inputs ; 9                           ;
-;     normal            ; 191                         ;
+; arriav_lcell_comb     ; 515                         ;
+;     arith             ; 223                         ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 204                         ;
+;         2 data inputs ; 1                           ;
+;         5 data inputs ; 15                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 291                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 35                          ;
-;         4 data inputs ; 47                          ;
-;         5 data inputs ; 22                          ;
-;         6 data inputs ; 79                          ;
-;     shared            ; 16                          ;
-;         2 data inputs ; 16                          ;
-; arriav_mac            ; 1                           ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 42                          ;
+;         4 data inputs ; 48                          ;
+;         5 data inputs ; 36                          ;
+;         6 data inputs ; 147                         ;
+; arriav_mac            ; 9                           ;
 ; boundary_port         ; 50                          ;
 ; stratixv_ram_block    ; 205                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.05                        ;
+; Max LUT depth         ; 8.50                        ;
+; Average LUT depth     ; 4.22                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1091,7 +1120,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:10     ;
 +----------------+--------------+
 
 
@@ -1101,7 +1130,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Oct 15 17:02:18 2019
+    Info: Processing started: Thu Oct 17 02:42:17 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TicTacToe -c TicTacToe
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1127,47 +1156,63 @@ Info (12021): Found 1 design units, including 1 entities, in source file testben
     Info (12023): Found entity 1: testbench_Sprite_Controller File: C:/intelFPGA_lite/18.1/TicTacToe/testbench_Sprite_Controller.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testbench_sram.sv
     Info (12023): Found entity 1: testbench_Sram File: C:/intelFPGA_lite/18.1/TicTacToe/testbench_Sram.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at video_controller.sv(54): created implicit net for "sprite_pika_b" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 54
+Warning (10236): Verilog HDL Implicit Net warning at video_controller.sv(64): created implicit net for "sprite_pika_b" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 64
 Warning (10236): Verilog HDL Implicit Net warning at testbench_Video_Controller.sv(13): created implicit net for "clk_25Mhz" File: C:/intelFPGA_lite/18.1/TicTacToe/testbench_Video_Controller.sv Line: 13
 Warning (10236): Verilog HDL Implicit Net warning at sprite_controller.sv(18): created implicit net for "wren" File: C:/intelFPGA_lite/18.1/TicTacToe/sprite_controller.sv Line: 18
 Info (12127): Elaborating entity "TicTacToe" for the top level hierarchy
 Warning (10034): Output port "LEDR" at TicTacToe.sv(4) has no driver File: C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv Line: 4
-Info (12128): Elaborating entity "video_controller" for hierarchy "video_controller:VGA" File: C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv Line: 17
-Warning (10230): Verilog HDL assignment warning at video_controller.sv(67): truncated value with size 32 to match size of target (16) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 67
-Info (10264): Verilog HDL Case Statement information at video_controller.sv(68): all case item expressions in this case statement are onehot File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 68
-Warning (10240): Verilog HDL Always Construct warning at video_controller.sv(63): inferring latch(es) for variable "address", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 63
-Info (10041): Inferred latch for "address[0]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[1]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[2]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[3]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[4]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[5]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[6]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[7]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[8]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[9]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[10]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[11]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[12]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[13]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[14]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (10041): Inferred latch for "address[15]" at video_controller.sv(95) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 95
-Info (12128): Elaborating entity "clock_divider" for hierarchy "video_controller:VGA|clock_divider:vga_clock_gen" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 30
-Info (12128): Elaborating entity "horizontal_counter" for hierarchy "video_controller:VGA|horizontal_counter:vga_horizontal" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 33
+Info (12128): Elaborating entity "video_controller" for hierarchy "video_controller:VGA" File: C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv Line: 72
+Warning (10230): Verilog HDL assignment warning at video_controller.sv(78): truncated value with size 32 to match size of target (16) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 78
+Info (10264): Verilog HDL Case Statement information at video_controller.sv(79): all case item expressions in this case statement are onehot File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 79
+Warning (10230): Verilog HDL assignment warning at video_controller.sv(118): truncated value with size 32 to match size of target (16) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 118
+Info (10264): Verilog HDL Case Statement information at video_controller.sv(119): all case item expressions in this case statement are onehot File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 119
+Warning (10230): Verilog HDL assignment warning at video_controller.sv(158): truncated value with size 32 to match size of target (16) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 158
+Info (10264): Verilog HDL Case Statement information at video_controller.sv(159): all case item expressions in this case statement are onehot File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 159
+Warning (10230): Verilog HDL assignment warning at video_controller.sv(198): truncated value with size 32 to match size of target (16) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 198
+Info (10264): Verilog HDL Case Statement information at video_controller.sv(199): all case item expressions in this case statement are onehot File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 199
+Warning (10230): Verilog HDL assignment warning at video_controller.sv(238): truncated value with size 32 to match size of target (16) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 238
+Info (10264): Verilog HDL Case Statement information at video_controller.sv(239): all case item expressions in this case statement are onehot File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 239
+Warning (10230): Verilog HDL assignment warning at video_controller.sv(278): truncated value with size 32 to match size of target (16) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 278
+Info (10264): Verilog HDL Case Statement information at video_controller.sv(279): all case item expressions in this case statement are onehot File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 279
+Warning (10230): Verilog HDL assignment warning at video_controller.sv(318): truncated value with size 32 to match size of target (16) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 318
+Info (10264): Verilog HDL Case Statement information at video_controller.sv(319): all case item expressions in this case statement are onehot File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 319
+Warning (10230): Verilog HDL assignment warning at video_controller.sv(358): truncated value with size 32 to match size of target (16) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 358
+Info (10264): Verilog HDL Case Statement information at video_controller.sv(359): all case item expressions in this case statement are onehot File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 359
+Warning (10230): Verilog HDL assignment warning at video_controller.sv(398): truncated value with size 32 to match size of target (16) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 398
+Info (10264): Verilog HDL Case Statement information at video_controller.sv(399): all case item expressions in this case statement are onehot File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 399
+Warning (10240): Verilog HDL Always Construct warning at video_controller.sv(74): inferring latch(es) for variable "address", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 74
+Info (10041): Inferred latch for "address[0]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[1]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[2]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[3]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[4]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[5]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[6]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[7]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[8]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[9]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[10]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[11]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[12]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[13]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[14]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (10041): Inferred latch for "address[15]" at video_controller.sv(114) File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 114
+Info (12128): Elaborating entity "clock_divider" for hierarchy "video_controller:VGA|clock_divider:vga_clock_gen" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 40
+Info (12128): Elaborating entity "horizontal_counter" for hierarchy "video_controller:VGA|horizontal_counter:vga_horizontal" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 43
 Warning (10230): Verilog HDL assignment warning at horizontal_counter.sv(12): truncated value with size 32 to match size of target (16) File: C:/intelFPGA_lite/18.1/TicTacToe/horizontal_counter.sv Line: 12
-Info (12128): Elaborating entity "vertical_counter" for hierarchy "video_controller:VGA|vertical_counter:vga_Vertical" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 34
+Info (12128): Elaborating entity "vertical_counter" for hierarchy "video_controller:VGA|vertical_counter:vga_Vertical" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 44
 Warning (10230): Verilog HDL assignment warning at vertical_counter.sv(13): truncated value with size 32 to match size of target (16) File: C:/intelFPGA_lite/18.1/TicTacToe/vertical_counter.sv Line: 13
-Info (12128): Elaborating entity "sram" for hierarchy "video_controller:VGA|sram:vamo_r" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 42
+Info (12128): Elaborating entity "sram" for hierarchy "video_controller:VGA|sram:vamo_r" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 52
 Warning (10850): Verilog HDL warning at sram.sv(11): number of words (10000) in memory file does not match the number of elements in the address range [0:40319] File: C:/intelFPGA_lite/18.1/TicTacToe/sram.sv Line: 11
-Info (12128): Elaborating entity "sram" for hierarchy "video_controller:VGA|sram:vamo_g" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 44
+Info (12128): Elaborating entity "sram" for hierarchy "video_controller:VGA|sram:vamo_g" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 54
 Warning (10850): Verilog HDL warning at sram.sv(11): number of words (10000) in memory file does not match the number of elements in the address range [0:40319] File: C:/intelFPGA_lite/18.1/TicTacToe/sram.sv Line: 11
-Info (12128): Elaborating entity "sram" for hierarchy "video_controller:VGA|sram:vamo_b" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 46
+Info (12128): Elaborating entity "sram" for hierarchy "video_controller:VGA|sram:vamo_b" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 56
 Warning (10850): Verilog HDL warning at sram.sv(11): number of words (10000) in memory file does not match the number of elements in the address range [0:40319] File: C:/intelFPGA_lite/18.1/TicTacToe/sram.sv Line: 11
-Info (12128): Elaborating entity "sram" for hierarchy "video_controller:VGA|sram:pika_r" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 50
+Info (12128): Elaborating entity "sram" for hierarchy "video_controller:VGA|sram:pika_r" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 60
 Warning (10850): Verilog HDL warning at sram.sv(11): number of words (10000) in memory file does not match the number of elements in the address range [0:40319] File: C:/intelFPGA_lite/18.1/TicTacToe/sram.sv Line: 11
-Info (12128): Elaborating entity "sram" for hierarchy "video_controller:VGA|sram:pika_g" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 52
+Info (12128): Elaborating entity "sram" for hierarchy "video_controller:VGA|sram:pika_g" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 62
 Warning (10850): Verilog HDL warning at sram.sv(11): number of words (10000) in memory file does not match the number of elements in the address range [0:40319] File: C:/intelFPGA_lite/18.1/TicTacToe/sram.sv Line: 11
-Info (12128): Elaborating entity "sram" for hierarchy "video_controller:VGA|sram:pika_b" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 54
+Info (12128): Elaborating entity "sram" for hierarchy "video_controller:VGA|sram:pika_b" File: C:/intelFPGA_lite/18.1/TicTacToe/video_controller.sv Line: 64
 Warning (10850): Verilog HDL warning at sram.sv(11): number of words (10000) in memory file does not match the number of elements in the address range [0:40319] File: C:/intelFPGA_lite/18.1/TicTacToe/sram.sv Line: 11
 Info (19000): Inferred 6 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "video_controller:VGA|sram:pika_b|memory_array_rtl_0" 
@@ -1378,7 +1423,9 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 8 input pin(s) that do not drive logic
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv Line: 3
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv Line: 3
     Warning (15610): No output dependent on input pin "SW[2]" File: C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv Line: 3
     Warning (15610): No output dependent on input pin "SW[3]" File: C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv Line: 3
     Warning (15610): No output dependent on input pin "SW[4]" File: C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv Line: 3
@@ -1387,16 +1434,16 @@ Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv Line: 3
     Warning (15610): No output dependent on input pin "SW[8]" File: C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv Line: 3
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/intelFPGA_lite/18.1/TicTacToe/TicTacToe.sv Line: 3
-Info (21057): Implemented 581 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 795 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 39 output pins
-    Info (21061): Implemented 325 logic cells
+    Info (21061): Implemented 531 logic cells
     Info (21064): Implemented 205 RAM segments
-    Info (21062): Implemented 1 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 75 warnings
-    Info: Peak virtual memory: 4877 megabytes
-    Info: Processing ended: Tue Oct 15 17:03:38 2019
-    Info: Elapsed time: 00:01:20
-    Info: Total CPU time (on all processors): 00:01:33
+    Info (21062): Implemented 9 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 85 warnings
+    Info: Peak virtual memory: 4898 megabytes
+    Info: Processing ended: Thu Oct 17 02:44:25 2019
+    Info: Elapsed time: 00:02:08
+    Info: Total CPU time (on all processors): 00:02:28
 
 

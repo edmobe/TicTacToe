@@ -1,5 +1,5 @@
 %read the image
-I = imread('pikachu_wow100x100.jpg');	
+I = imread('vamo_a_calmarno100x100_fixed.jpg');	
 imshow(I);
 		
 %Extract RED, GREEN and BLUE components from the image
@@ -8,7 +8,7 @@ G = I(:,:,2);
 B = I(:,:,3);
 
 %save variable R to a file in HEX format for the chip to read
-fileID = fopen ('spritePikaR.txt', 'w');
+fileID = fopen ('spriteVamoR.mem', 'w');
 for i = 1:size(R(:), 1)-1
     fprintf (fileID, '%x\n', R(i)); % R (dec) -> print to file (hex)
 end
@@ -16,7 +16,7 @@ fprintf (fileID, '%x', R(size(R(:), 1))); % R (dec) -> print to file (hex)
 fclose (fileID);
 
 %save variable G to a file in HEX format for the chip to read
-fileID = fopen ('spritePikaG.txt', 'w');
+fileID = fopen ('spriteVamoG.mem', 'w');
 for i = 1:size(G(:), 1)-1
     fprintf (fileID, '%x\n', G(i)); % G (dec) -> print to file (hex)
 end
@@ -24,7 +24,7 @@ fprintf (fileID, '%x', G(size(G(:), 1))); % G (dec) -> print to file (hex)
 fclose (fileID);
 
 %save variable B to a file in HEX format for the chip to read
-fileID = fopen ('spritePikaB.txt', 'w');
+fileID = fopen ('spriteVamoB.mem', 'w');
 for i = 1:size(B(:), 1)-1
     fprintf (fileID, '%x\n', B(i)); % B (dec) -> print to file (hex)
 end
