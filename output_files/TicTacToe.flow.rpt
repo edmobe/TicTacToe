@@ -1,5 +1,5 @@
 Flow report for TicTacToe
-Thu Oct 17 03:31:41 2019
+Mon Oct 21 17:05:37 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,16 +40,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Oct 17 03:31:41 2019       ;
+; Flow Status                     ; Successful - Mon Oct 21 17:05:37 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; TicTacToe                                   ;
 ; Top-level Entity Name           ; TicTacToe                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 351 / 32,070 ( 1 % )                        ;
-; Total registers                 ; 99                                          ;
-; Total pins                      ; 50 / 457 ( 11 % )                           ;
+; Logic utilization (in ALMs)     ; 472 / 32,070 ( 1 % )                        ;
+; Total registers                 ; 131                                         ;
+; Total pins                      ; 53 / 457 ( 12 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 1,653,120 / 4,065,280 ( 41 % )              ;
 ; Total DSP Blocks                ; 9 / 87 ( 10 % )                             ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/17/2019 03:25:23 ;
+; Start date & time ; 10/21/2019 16:57:37 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; TicTacToe           ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 204722662231713.157130432204996        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 91754661378.157169865714808            ; --            ; --          ; --         ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
@@ -96,12 +96,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:02:52     ; 1.0                     ; 4947 MB             ; 00:03:17                           ;
-; Fitter               ; 00:02:48     ; 1.1                     ; 6642 MB             ; 00:04:42                           ;
-; Assembler            ; 00:00:12     ; 1.0                     ; 4888 MB             ; 00:00:12                           ;
-; Timing Analyzer      ; 00:00:15     ; 1.7                     ; 5206 MB             ; 00:00:21                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4782 MB             ; 00:00:03                           ;
-; Total                ; 00:06:09     ; --                      ; --                  ; 00:08:35                           ;
+; Analysis & Synthesis ; 00:02:36     ; 1.0                     ; 4860 MB             ; 00:03:01                           ;
+; Fitter               ; 00:04:42     ; 1.0                     ; 6284 MB             ; 00:06:45                           ;
+; Assembler            ; 00:00:13     ; 1.0                     ; 4892 MB             ; 00:00:13                           ;
+; Timing Analyzer      ; 00:00:19     ; 1.5                     ; 5182 MB             ; 00:00:26                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4793 MB             ; 00:00:03                           ;
+; Total                ; 00:07:52     ; --                      ; --                  ; 00:10:28                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -110,11 +110,11 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-GV8O5MU  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-GV8O5MU  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-GV8O5MU  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-GV8O5MU  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-GV8O5MU  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-TTVHBT8  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-TTVHBT8  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-TTVHBT8  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-TTVHBT8  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-TTVHBT8  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

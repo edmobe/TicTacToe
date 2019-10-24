@@ -1,15 +1,19 @@
 |TicTacToe
-CLOCK_50 => CLOCK_50.IN1
-SW[0] => SW[0].IN1
-SW[1] => SW[1].IN1
-SW[2] => SW[2].IN1
-SW[3] => SW[3].IN1
-SW[4] => SW[4].IN1
-SW[5] => SW[5].IN1
+CLOCK_50 => CLOCK_50.IN2
+SW[0] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
 SW[6] => ~NO_FANOUT~
 SW[7] => ~NO_FANOUT~
 SW[8] => ~NO_FANOUT~
 SW[9] => ~NO_FANOUT~
+move => move.IN1
+select => select.IN1
+reset => _.IN1
+reset => _.IN1
 LEDR[0] << <GND>
 LEDR[1] << <GND>
 LEDR[2] << <GND>
@@ -49,6 +53,502 @@ VGA_B[7] << video_controller:VGA.port15
 VGA_CLK << video_controller:VGA.port16
 VGA_SYNC_N << video_controller:VGA.port17
 VGA_BLANK_N << video_controller:VGA.port18
+
+
+|TicTacToe|contador:cont
+clk => temp[0].CLK
+clk => temp[1].CLK
+clk => temp[2].CLK
+clk => temp[3].CLK
+data[0] <= temp[0].DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= temp[1].DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= temp[2].DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= temp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|selector:sel
+btn_selector => O.CLK
+btn_selector => X.CLK
+reset => O.ACLR
+reset => X.PRESET
+Xp <= X.DB_MAX_OUTPUT_PORT_TYPE
+Op <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO
+clock => clock.IN2
+reset => reset.IN2
+play => play.IN1
+pc => pc.IN1
+computer_position[0] => computer_position[0].IN1
+computer_position[1] => computer_position[1].IN1
+computer_position[2] => computer_position[2].IN1
+computer_position[3] => computer_position[3].IN1
+player_position[0] => player_position[0].IN1
+player_position[1] => player_position[1].IN1
+player_position[2] => player_position[2].IN1
+player_position[3] => player_position[3].IN1
+pos1[0] <= pos1[0].DB_MAX_OUTPUT_PORT_TYPE
+pos1[1] <= pos1[1].DB_MAX_OUTPUT_PORT_TYPE
+pos2[0] <= pos2[0].DB_MAX_OUTPUT_PORT_TYPE
+pos2[1] <= pos2[1].DB_MAX_OUTPUT_PORT_TYPE
+pos3[0] <= pos3[0].DB_MAX_OUTPUT_PORT_TYPE
+pos3[1] <= pos3[1].DB_MAX_OUTPUT_PORT_TYPE
+pos4[0] <= pos4[0].DB_MAX_OUTPUT_PORT_TYPE
+pos4[1] <= pos4[1].DB_MAX_OUTPUT_PORT_TYPE
+pos5[0] <= pos5[0].DB_MAX_OUTPUT_PORT_TYPE
+pos5[1] <= pos5[1].DB_MAX_OUTPUT_PORT_TYPE
+pos6[0] <= pos6[0].DB_MAX_OUTPUT_PORT_TYPE
+pos6[1] <= pos6[1].DB_MAX_OUTPUT_PORT_TYPE
+pos7[0] <= pos7[0].DB_MAX_OUTPUT_PORT_TYPE
+pos7[1] <= pos7[1].DB_MAX_OUTPUT_PORT_TYPE
+pos8[0] <= pos8[0].DB_MAX_OUTPUT_PORT_TYPE
+pos8[1] <= pos8[1].DB_MAX_OUTPUT_PORT_TYPE
+pos9[0] <= pos9[0].DB_MAX_OUTPUT_PORT_TYPE
+pos9[1] <= pos9[1].DB_MAX_OUTPUT_PORT_TYPE
+who[0] <= winner_detector:win_detect_unit.port10
+who[1] <= winner_detector:win_detect_unit.port10
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|position_registers:position_reg_unit
+clock => pos9[0]~reg0.CLK
+clock => pos9[1]~reg0.CLK
+clock => pos8[0]~reg0.CLK
+clock => pos8[1]~reg0.CLK
+clock => pos7[0]~reg0.CLK
+clock => pos7[1]~reg0.CLK
+clock => pos6[0]~reg0.CLK
+clock => pos6[1]~reg0.CLK
+clock => pos5[0]~reg0.CLK
+clock => pos5[1]~reg0.CLK
+clock => pos4[0]~reg0.CLK
+clock => pos4[1]~reg0.CLK
+clock => pos3[0]~reg0.CLK
+clock => pos3[1]~reg0.CLK
+clock => pos2[0]~reg0.CLK
+clock => pos2[1]~reg0.CLK
+clock => pos1[0]~reg0.CLK
+clock => pos1[1]~reg0.CLK
+reset => pos9[0]~reg0.ACLR
+reset => pos9[1]~reg0.ACLR
+reset => pos8[0]~reg0.ACLR
+reset => pos8[1]~reg0.ACLR
+reset => pos7[0]~reg0.ACLR
+reset => pos7[1]~reg0.ACLR
+reset => pos6[0]~reg0.ACLR
+reset => pos6[1]~reg0.ACLR
+reset => pos5[0]~reg0.ACLR
+reset => pos5[1]~reg0.ACLR
+reset => pos4[0]~reg0.ACLR
+reset => pos4[1]~reg0.ACLR
+reset => pos3[0]~reg0.ACLR
+reset => pos3[1]~reg0.ACLR
+reset => pos2[0]~reg0.ACLR
+reset => pos2[1]~reg0.ACLR
+reset => pos1[0]~reg0.ACLR
+reset => pos1[1]~reg0.ACLR
+illegal_move => pos1[1]~reg0.ENA
+illegal_move => pos1[0]~reg0.ENA
+illegal_move => pos2[1]~reg0.ENA
+illegal_move => pos2[0]~reg0.ENA
+illegal_move => pos3[1]~reg0.ENA
+illegal_move => pos3[0]~reg0.ENA
+illegal_move => pos4[1]~reg0.ENA
+illegal_move => pos4[0]~reg0.ENA
+illegal_move => pos5[1]~reg0.ENA
+illegal_move => pos5[0]~reg0.ENA
+illegal_move => pos6[1]~reg0.ENA
+illegal_move => pos6[0]~reg0.ENA
+illegal_move => pos7[1]~reg0.ENA
+illegal_move => pos7[0]~reg0.ENA
+illegal_move => pos8[1]~reg0.ENA
+illegal_move => pos9[0]~reg0.ENA
+illegal_move => pos8[0]~reg0.ENA
+illegal_move => pos9[1]~reg0.ENA
+PC_en[0] => pos1.OUTPUTSELECT
+PC_en[0] => pos1.OUTPUTSELECT
+PC_en[1] => pos2.OUTPUTSELECT
+PC_en[1] => pos2.OUTPUTSELECT
+PC_en[2] => pos3.OUTPUTSELECT
+PC_en[2] => pos3.OUTPUTSELECT
+PC_en[3] => pos4.OUTPUTSELECT
+PC_en[3] => pos4.OUTPUTSELECT
+PC_en[4] => pos5.OUTPUTSELECT
+PC_en[4] => pos5.OUTPUTSELECT
+PC_en[5] => pos6.OUTPUTSELECT
+PC_en[5] => pos6.OUTPUTSELECT
+PC_en[6] => pos7.OUTPUTSELECT
+PC_en[6] => pos7.OUTPUTSELECT
+PC_en[7] => pos8.OUTPUTSELECT
+PC_en[7] => pos8.OUTPUTSELECT
+PC_en[8] => pos9.OUTPUTSELECT
+PC_en[8] => pos9.OUTPUTSELECT
+PL_en[0] => pos1.OUTPUTSELECT
+PL_en[0] => pos1.OUTPUTSELECT
+PL_en[1] => pos2.OUTPUTSELECT
+PL_en[1] => pos2.OUTPUTSELECT
+PL_en[2] => pos3.OUTPUTSELECT
+PL_en[2] => pos3.OUTPUTSELECT
+PL_en[3] => pos4.OUTPUTSELECT
+PL_en[3] => pos4.OUTPUTSELECT
+PL_en[4] => pos5.OUTPUTSELECT
+PL_en[4] => pos5.OUTPUTSELECT
+PL_en[5] => pos6.OUTPUTSELECT
+PL_en[5] => pos6.OUTPUTSELECT
+PL_en[6] => pos7.OUTPUTSELECT
+PL_en[6] => pos7.OUTPUTSELECT
+PL_en[7] => pos8.OUTPUTSELECT
+PL_en[7] => pos8.OUTPUTSELECT
+PL_en[8] => pos9.OUTPUTSELECT
+PL_en[8] => pos9.OUTPUTSELECT
+pos1[0] <= pos1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos1[1] <= pos1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos2[0] <= pos2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos2[1] <= pos2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos3[0] <= pos3[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos3[1] <= pos3[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos4[0] <= pos4[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos4[1] <= pos4[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos5[0] <= pos5[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos5[1] <= pos5[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos6[0] <= pos6[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos6[1] <= pos6[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos7[0] <= pos7[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos7[1] <= pos7[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos8[0] <= pos8[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos8[1] <= pos8[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos9[0] <= pos9[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pos9[1] <= pos9[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|winner_detector:win_detect_unit
+pos1[0] => pos1[0].IN3
+pos1[1] => pos1[1].IN3
+pos2[0] => pos2[0].IN2
+pos2[1] => pos2[1].IN2
+pos3[0] => pos3[0].IN3
+pos3[1] => pos3[1].IN3
+pos4[0] => pos4[0].IN2
+pos4[1] => pos4[1].IN2
+pos5[0] => pos5[0].IN4
+pos5[1] => pos5[1].IN4
+pos6[0] => pos6[0].IN3
+pos6[1] => pos6[1].IN3
+pos7[0] => pos7[0].IN2
+pos7[1] => pos7[1].IN2
+pos8[0] => pos8[0].IN2
+pos8[1] => pos8[1].IN2
+pos9[0] => pos9[0].IN3
+pos9[1] => pos9[1].IN3
+winner <= winner.DB_MAX_OUTPUT_PORT_TYPE
+who[0] <= who.DB_MAX_OUTPUT_PORT_TYPE
+who[1] <= who.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|winner_detector:win_detect_unit|winner_detect_3:u1
+pos0[0] => temp0.IN0
+pos0[0] => temp3.IN0
+pos0[0] => who.IN1
+pos0[1] => temp0.IN0
+pos0[1] => temp3.IN1
+pos0[1] => who.IN1
+pos1[0] => temp0.IN1
+pos1[0] => temp1.IN0
+pos1[1] => temp0.IN1
+pos1[1] => temp1.IN0
+pos2[0] => temp1.IN1
+pos2[1] => temp1.IN1
+winner <= winner.DB_MAX_OUTPUT_PORT_TYPE
+who[0] <= who.DB_MAX_OUTPUT_PORT_TYPE
+who[1] <= who.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|winner_detector:win_detect_unit|winner_detect_3:u2
+pos0[0] => temp0.IN0
+pos0[0] => temp3.IN0
+pos0[0] => who.IN1
+pos0[1] => temp0.IN0
+pos0[1] => temp3.IN1
+pos0[1] => who.IN1
+pos1[0] => temp0.IN1
+pos1[0] => temp1.IN0
+pos1[1] => temp0.IN1
+pos1[1] => temp1.IN0
+pos2[0] => temp1.IN1
+pos2[1] => temp1.IN1
+winner <= winner.DB_MAX_OUTPUT_PORT_TYPE
+who[0] <= who.DB_MAX_OUTPUT_PORT_TYPE
+who[1] <= who.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|winner_detector:win_detect_unit|winner_detect_3:u3
+pos0[0] => temp0.IN0
+pos0[0] => temp3.IN0
+pos0[0] => who.IN1
+pos0[1] => temp0.IN0
+pos0[1] => temp3.IN1
+pos0[1] => who.IN1
+pos1[0] => temp0.IN1
+pos1[0] => temp1.IN0
+pos1[1] => temp0.IN1
+pos1[1] => temp1.IN0
+pos2[0] => temp1.IN1
+pos2[1] => temp1.IN1
+winner <= winner.DB_MAX_OUTPUT_PORT_TYPE
+who[0] <= who.DB_MAX_OUTPUT_PORT_TYPE
+who[1] <= who.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|winner_detector:win_detect_unit|winner_detect_3:u4
+pos0[0] => temp0.IN0
+pos0[0] => temp3.IN0
+pos0[0] => who.IN1
+pos0[1] => temp0.IN0
+pos0[1] => temp3.IN1
+pos0[1] => who.IN1
+pos1[0] => temp0.IN1
+pos1[0] => temp1.IN0
+pos1[1] => temp0.IN1
+pos1[1] => temp1.IN0
+pos2[0] => temp1.IN1
+pos2[1] => temp1.IN1
+winner <= winner.DB_MAX_OUTPUT_PORT_TYPE
+who[0] <= who.DB_MAX_OUTPUT_PORT_TYPE
+who[1] <= who.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|winner_detector:win_detect_unit|winner_detect_3:u5
+pos0[0] => temp0.IN0
+pos0[0] => temp3.IN0
+pos0[0] => who.IN1
+pos0[1] => temp0.IN0
+pos0[1] => temp3.IN1
+pos0[1] => who.IN1
+pos1[0] => temp0.IN1
+pos1[0] => temp1.IN0
+pos1[1] => temp0.IN1
+pos1[1] => temp1.IN0
+pos2[0] => temp1.IN1
+pos2[1] => temp1.IN1
+winner <= winner.DB_MAX_OUTPUT_PORT_TYPE
+who[0] <= who.DB_MAX_OUTPUT_PORT_TYPE
+who[1] <= who.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|winner_detector:win_detect_unit|winner_detect_3:u6
+pos0[0] => temp0.IN0
+pos0[0] => temp3.IN0
+pos0[0] => who.IN1
+pos0[1] => temp0.IN0
+pos0[1] => temp3.IN1
+pos0[1] => who.IN1
+pos1[0] => temp0.IN1
+pos1[0] => temp1.IN0
+pos1[1] => temp0.IN1
+pos1[1] => temp1.IN0
+pos2[0] => temp1.IN1
+pos2[1] => temp1.IN1
+winner <= winner.DB_MAX_OUTPUT_PORT_TYPE
+who[0] <= who.DB_MAX_OUTPUT_PORT_TYPE
+who[1] <= who.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|winner_detector:win_detect_unit|winner_detect_3:u7
+pos0[0] => temp0.IN0
+pos0[0] => temp3.IN0
+pos0[0] => who.IN1
+pos0[1] => temp0.IN0
+pos0[1] => temp3.IN1
+pos0[1] => who.IN1
+pos1[0] => temp0.IN1
+pos1[0] => temp1.IN0
+pos1[1] => temp0.IN1
+pos1[1] => temp1.IN0
+pos2[0] => temp1.IN1
+pos2[1] => temp1.IN1
+winner <= winner.DB_MAX_OUTPUT_PORT_TYPE
+who[0] <= who.DB_MAX_OUTPUT_PORT_TYPE
+who[1] <= who.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|winner_detector:win_detect_unit|winner_detect_3:u8
+pos0[0] => temp0.IN0
+pos0[0] => temp3.IN0
+pos0[0] => who.IN1
+pos0[1] => temp0.IN0
+pos0[1] => temp3.IN1
+pos0[1] => who.IN1
+pos1[0] => temp0.IN1
+pos1[0] => temp1.IN0
+pos1[1] => temp0.IN1
+pos1[1] => temp1.IN0
+pos2[0] => temp1.IN1
+pos2[1] => temp1.IN1
+winner <= winner.DB_MAX_OUTPUT_PORT_TYPE
+who[0] <= who.DB_MAX_OUTPUT_PORT_TYPE
+who[1] <= who.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|position_decoder:pd1
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+out_en[0] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[1] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[2] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[3] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[4] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[5] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[6] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[7] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[8] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[9] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[10] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[11] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[12] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[13] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[14] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[15] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|position_decoder:pd2
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+enable => out_en.OUTPUTSELECT
+out_en[0] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[1] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[2] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[3] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[4] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[5] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[6] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[7] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[8] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[9] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[10] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[11] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[12] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[13] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[14] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+out_en[15] <= out_en.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|illegal_move_detector:imd_unit
+pos1[0] => temp11.IN0
+pos1[1] => temp11.IN1
+pos2[0] => temp12.IN0
+pos2[1] => temp12.IN1
+pos3[0] => temp13.IN0
+pos3[1] => temp13.IN1
+pos4[0] => temp14.IN0
+pos4[1] => temp14.IN1
+pos5[0] => temp15.IN0
+pos5[1] => temp15.IN1
+pos6[0] => temp16.IN0
+pos6[1] => temp16.IN1
+pos7[0] => temp17.IN0
+pos7[1] => temp17.IN1
+pos8[0] => temp18.IN0
+pos8[1] => temp18.IN1
+pos9[0] => temp19.IN0
+pos9[1] => temp19.IN1
+PC_en[0] => temp11.IN1
+PC_en[1] => temp12.IN1
+PC_en[2] => temp13.IN1
+PC_en[3] => temp14.IN1
+PC_en[4] => temp15.IN1
+PC_en[5] => temp16.IN1
+PC_en[6] => temp17.IN1
+PC_en[7] => temp18.IN1
+PC_en[8] => temp19.IN1
+PL_en[0] => temp1.IN1
+PL_en[1] => temp2.IN1
+PL_en[2] => temp3.IN1
+PL_en[3] => temp4.IN1
+PL_en[4] => temp5.IN1
+PL_en[5] => temp6.IN1
+PL_en[6] => temp7.IN1
+PL_en[7] => temp8.IN1
+PL_en[8] => temp9.IN1
+illegal_move <= illegal_move.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|nospace_detector:nsd_unit
+pos1[0] => temp1.IN0
+pos1[1] => temp1.IN1
+pos2[0] => temp2.IN0
+pos2[1] => temp2.IN1
+pos3[0] => temp3.IN0
+pos3[1] => temp3.IN1
+pos4[0] => temp4.IN0
+pos4[1] => temp4.IN1
+pos5[0] => temp5.IN0
+pos5[1] => temp5.IN1
+pos6[0] => temp6.IN0
+pos6[1] => temp6.IN1
+pos7[0] => temp7.IN0
+pos7[1] => temp7.IN1
+pos8[0] => temp8.IN0
+pos8[1] => temp8.IN1
+pos9[0] => temp9.IN0
+pos9[1] => temp9.IN1
+no_space <= no_space.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TicTacToe|tic_tac_toe_game:JUEGO|fsm_controller:tic_tac_toe_controller
+clock => current_state~1.DATAIN
+reset => Selector6.IN2
+reset => current_state~3.DATAIN
+reset => Selector0.IN1
+reset => always1.IN0
+play => always1.IN1
+pc => computer_play.DATAA
+pc => computer_play.IN1
+pc => next_state.GAME_DONE.OUTPUTSELECT
+pc => next_state.IDLE.OUTPUTSELECT
+pc => Selector2.IN2
+illegal_move => Selector6.IN3
+illegal_move => Selector2.IN1
+no_space => always1.IN0
+no_space => always1.IN0
+win => always1.IN1
+win => always1.IN1
+computer_play <= computer_play$latch.DB_MAX_OUTPUT_PORT_TYPE
+player_play <= player_play.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |TicTacToe|video_controller:VGA
